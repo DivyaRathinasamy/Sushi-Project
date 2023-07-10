@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Project</title>
+
+    <!--   boootsrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- Fontawesome js -->
+    <script src="https://kit.fontawesome.com/57b2cf32d8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+
+
+
+        body {
+            font-family: 'Mr Dafoe', cursive;
+            color: #c9c1ac;
+            background: url(img/body-bcg.jpg)center/cover fixed no-repeat;
+
+        }
+
+        .info {
+            background: #c9c1ac;
+        }
+
+        .primary-color {
+            color: #d3325f;
+        }
+
+        .info h2 {
+            word-spacing: 0.6rem;
+        }
+
+        .info a {
+            transition: color 2s ease-in-out;
+        }
+
+        .info a:hover {
+            color: #242424;
+        }
+
+        /* ================= */
+        #header {
+            min-height: calc(100vb - 94px);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/pexels-valeria-boltneva-684965.jpg);
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .height-90 {
+            min-height: calc(100vb - 94px);
+
+        }
+
+        .banner h1 {
+            border-top: 6px dotted #c9c1ac;
+            border-bottom: 6px dotted #c9c1ac;
+            animation: fromLeft;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fromLeft {
+            0% {
+                transform: translateX(-100px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(30px);
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+
+
+
+
+
+        .main-btn {
+            color: #d3325f;
+            font-size: 2rem;
+            border: 2px solid #d3325f;
+            transition: all 1s ease-in-out;
+
+        }
+
+        .main-btn:hover {
+            color: #242424;
+            border: 2px solid #c9c1ac;
+            background: #c9c1ac;
+        }
+
+        .sushi-btn {
+            animation: fromRight;
+            animation-duration: 4s;
+            animation-delay: 2s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+
+        }
+
+
+
+
+
+
+        @keyframes fromRight {
+            0% {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+
+            50% {
+                transform: translateX(-30px);
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+
+
+
+
+
+
+        .header-link {
+            display: inline-block;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            background: #c9c1ac;
+            border-radius: 10px;
+            transition: all 2s ease;
+            animation: fromBottom;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        .header-link:hover {
+            color: #242424;
+        }
+
+        @keyframes fromBottom {
+            0% {
+                transform: translateY(-10px);
+            }
+
+            50% {
+                transform: translateY(10px);
+            }
+
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ========navbar============ */
+        .navbar {
+            background: #c9c1ac;
+            padding: 20px 20px;
+            transition: all 1s ease;
+        }
+
+        .navbar-background {
+            padding: 5px 20px;
+        }
+
+        .navbar-brand {
+            font-size: 30px;
+            transition: all 1s ease;
+        }
+
+        .navbar-brand:hover {
+            color: #242424;
+        }
+
+        .nav-link {
+            color: #242424;
+            text-decoration: none;
+            transition: all 1s ease;
+            font-size: 23px;
+        }
+
+        .nav-link:hover {
+            color: #d3325f
+        }
+
+        .nav-btn {
+            background: transparent;
+            color: #d3325f;
+            border: 2px solid #d3325f;
+            font-size: 23px;
+            transition: all 2s ease;
+        }
+
+        .nav-btn:hover {
+            color: #242424;
+            border: 2px solid #242424;
+
+
+        }
+
+        .toggler-btn {
+            border: 2px solid #d3325f;
+            padding: 5px;
+            transition: all 2s ease;
+        }
+
+        .bar {
+            width: 30px;
+            height: 3px;
+            margin: 5px;
+            background: #d3325f;
+            transition: all 0.5s ease;
+        }
+
+        .change .bar1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .change .bar2 {
+            opacity: 0;
+        }
+
+        .change .bar3 {
+            transform: rotate(45deg) translate(-5px, -8px);
+        }
+
+
+
+
+
+
+
+
+
+
+        /* =================menu items====================== */
+        .item-container {
+            position: relative;
+            /* for the link */
+            overflow: hidden;
+            background: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+            transition: all 2s ease;
+
+        }
+
+        .item-img {
+            transition: all 2s ease;
+        }
+
+        .item-container:hover .item-img {
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
+
+        .item-link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #d3325f;
+            font-size: 2rem;
+            border-top: 3px solid #d3325f;
+            border-bottom: 3px solid #d3325f;
+            transition: all 2s ease;
+            opacity: 0;
+        }
+
+        .item-container:hover .item-link {
+            opacity: 1;
+        }
+
+        .item-link:hover {
+            color: #c9c1ac;
+            border: 3px solid #c9c1ac;
+            background: #c9c1ac;
+            color: #242424;
+        }
+
+        .item-container:hover {
+            outline: 10px solid #d3325f;
+            outline-offset: -0.8rem;
+        }
+
+        /* ======Menu========== */
+
+        #menu {
+            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url(/img/pexels-valeria-boltneva-684965.jpg)center/cover fixed no-repeat;
+        }
+
+        .special {
+            border: 3px solid #d3325f;
+            position: relative;
+        }
+
+        .special-text {
+            position: absolute;
+            top: 0;
+            right: 10%;
+            background: #d3325f;
+            padding: 0 0.4rem;
+        }
+
+        /* ==============about============= */
+
+        .about-picturs {
+            position: relative;
+        }
+
+        .about-image {
+            position: absolute;
+            width: 150px;
+            transition: all 2s ease;
+            opacity: 0.9;
+        }
+
+        .img-1 {
+            left: 0%;
+            top: 0%;
+        }
+
+        .img-2 {
+            left: 20%;
+            top: 20%;
+            z-index: 10%;
+        }
+
+        .img-3 {
+            left: 40%;
+            top: 45%;
+            z-index: 20%;
+        }
+
+        .img-4 {
+            left: 40%;
+            top: 0%;
+
+        }
+
+        .img-5 {
+            left: 0%;
+            top: 45%;
+
+        }
+
+        .about-image:hover {
+            outline: 10px solid #d3325f;
+            outline-offset: 0.8rem;
+            transform: scale(1.3) rotate(20deg);
+            z-index: 30;
+            opacity: 1;
+        }
+
+        .about-pictures:hover .about-image:not(:hover) {
+            opacity: 0.5;
+        }
+
+        /* -----review section-------- */
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.7);
+            clip-path: polygon(5% 0, 100% 0, 95% 100%, 0 100%);
+        }
+
+
+
+
+        .review-img {
+            width: 150px;
+        }
+
+        /* =======team======== */
+        .team-icons a {
+            color: #d3325f;
+            transition: all 2s ease-in-out;
+        }
+
+        .team-icons a:hover {
+            color: #242424;
+            transform: translateY(-5px);
+        }
+
+
+        /* =======contact=========== */
+        .height-60 {
+            min-height: 60vh;
+        }
+
+        #contact .card {
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 2s ease;
+        }
+
+        #contact .card:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        #contact .card-header {
+            color: #d3325f;
+        }
+
+        #contact .input-group-text {
+            background: #d3325f;
+            background-color: #d3325f;
+            color: #242424;
+        }
+
+        #contact .card input {
+            color: #606060;
+        }
+
+        #contact .card input::placeholder {
+            color: #606060;
+
+        }
+
+        .contact-btn {
+            color: #d3325f;
+            border-color: #d3325f;
+            background: transparent;
+            transition: all 2s ease-in-out;
+        }
+
+        .contact-btn:hover {
+            background: #c9c1ac;
+            color: #d3325f;
+            border-color: #c9c1ac;
+        }
+
+        /* ---footer----- */
+        #back-to-top {
+            background: #c9c1ac;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .scrollTop {
+            position: fixed;
+            bottom: 70px;
+            right: 10px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <!-- social icons -->
+
+    <div class="container-fluid info p-3" id="top-icons">
+
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+                <div class="info-icons p-2">
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-yelp fa-2x"></i></a>
+
+                </div>
+                <h2 class="primary-color p-2 text-capitalize">8325 Fordham Blvd, Los Angeles, CA 90045</h2>
+            </div>
+        </div>
+    </div>
+    <!-- end of social icons -->
+
+    <!-- header section -->
+    <header id="header">
+        <div class="container">
+            <div class="row height-90 align-items-center justify-content-center">
+                <div class="col">
+
+
+                    <div class="banner text-center">
+                        <h1 class="display-1 text-capitalize w-50 mx-auto">
+                            <small>Sushi</small> <strong class="primary-color">Palace</strong>
+                        </h1>
+                        <a href="" class="btn main-btn sushi-btn my-4 text-capitalize">order online</a>
+
+                    </div>
+
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <a href="#special-items" class="btn header-link primary-color"><i class="fas fa-arrow-down"></i></a>
+    </header>
+
+
+    <!-- end of header section -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <a href="#" class="navbar-brand text-uppercase primary-color">Sushi Palace</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <div class="toggler-btn">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+
+
+        </button>
+        <!--------Links------ -->
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a href="#special-items" class="nav-link text-capitalize">special items</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu" class="nav-link text-capitalize">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link text-capitalize">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reviews" class="nav-link text-capitalize">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#team" class="nav-link text-capitalize">Team</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link text-capitalize">Contacts</a>
+                </li>
+
+
+
+            </ul>
+
+            <form class="form-inline d-none d-lg-block mr-5">
+                <button class="btn nav-btn text-capitalize" type="button">Order Online</button>
+
+            </form>
+
+
+        </div>
+
+
+
+    </nav>
+
+
+
+
+
+
+    <!-- end of navbar -->
+    <!-- menu items -->
+    <section class="py-5" id="special-items">
+        <div class="container my-5">
+            <div class="row parent-container">
+
+                <!-- menu items -->
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 1.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 1.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 2.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 2.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 3.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 3.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 4.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 4.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 5.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 5.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-10 mx-auto col-sm-6 col-lg-4 my-3">
+                    <div class="item-container">
+                        <img src="img/menu-item 6.jpg" class="img-fluid img-thumbnail item-img" alt="menu item">
+                        <a href="img/menu-item 6.jpg">
+                            <h1 class="text-uppercase text-center item-link px-3">menu item</h1>
+                        </a>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- end of menu items -->
+
+    <!-- menu section -->
+    <section id="menu" class="py-5 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- ======title==== -->
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="primary-color text-uppercase">Soups</h1>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- ======end of title -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Soup</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3 special">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Soup</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+                        <h3 class="special-text text-capitalize">Chef Special</h3>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+                    <!-- ======title================ -->
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="primary-color text-uppercase">Sushi</h1>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- ======end of title -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Sushi</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3 special">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Sushi</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+                        <h3 class="special-text text-capitalize">Chef Special</h3>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+
+
+
+
+                </div>
+                <!--end of first column  -->
+                <div class="col-md-6">
+                    <!-- ======title==== -->
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="primary-color text-uppercase">Sushimi</h1>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- ======end of title -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3 special">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Sushimi</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+                        <h3 class="special-text text-capitalize">Chef Special</h3>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+
+
+
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Sushimi</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+
+                    <!-- ======title================ -->
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="primary-color text-uppercase">Rolls</h1>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- ======end of title -->
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3 special">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Rolls</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+                        <h3 class="special-text text-capitalize">Chef Special</h3>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+
+
+                    <!-- single item -->
+                    <div class="single-item d-flex justify-content-between my-3 p-3">
+                        <div class="single-item-text">
+                            <h2 class="text-uppercase text-dark">Rolls</h2>
+                            <h4 class="text-muted">Lorem ipsum dolor sit amet.</h4>
+                        </div>
+                        <div class="single-item-price align-self-end">
+                            <h1 class="text-uppercase text-dark">$10</h1>
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <!-- end of single item -->
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </section>
+
+
+    <!-- end of menu section -->
+
+    <!-- About -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 my-4">
+                    <h1 class="text-uppercase display-3">About Us</h1>
+                    <h2 class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
+                        facilis dolores incidunt blanditiis odit facere velit in a deleniti ipsa.</h2>
+                    <a href="" class="btn main-btn my-4 text-capitalize">Learn More</a>
+                </div>
+                <div class="col-md-6 about-pictures my-4 d-none d-lg-block">
+                    <img src="img/about-pic 1.jpg" alt="menu" class="img-1 img-thumbnail about-image">
+                    <img src="img/about-pic 2.jpg" alt="menu" class="img-2 img-thumbnail about-image">
+                    <img src="img/about-pic 3.jpg" alt="menu" class="img-3 img-thumbnail about-image">
+                    <img src="img/about-pic 4.jpg" alt="menu" class="img-4 img-thumbnail about-image">
+                    <img src="img/about-pic 5.jpg" alt="menu" class="img-5 img-thumbnail about-image">
+
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+    <!-- End of About -->
+
+    <!------- Reviews----- -->
+    <section id="reviews" class="py-5">
+        <div id="slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-------carousel items  ------>
+                <div class="carousel-item active">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex justify-content-between review-item py-3">
+                                <!--image  -->
+                                <div class="align-self-center ml-3">
+                                    <img src="img/customer-1.jpg" alt="" class="rounded-circle review-img">
+                                </div>
+                                <!---------- text -------->
+                                <div class="review-text px-5">
+                                    <h2 class="text-capitalize mb-3 primary-color">Customer Name</h2>
+                                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Vel est delectus a velit similique. Quae illo, omnis repellendus ratione
+                                        accusamus adipisci amet quos doloremque earum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-------- end of carousel items ------->
+                <!-------carousel items  ------>
+                <div class="carousel-item ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex justify-content-between review-item py-3">
+                                <!--image  -->
+                                <div class="align-self-center ml-3">
+                                    <img src="img/customer-2.jpg" alt="" class="rounded-circle review-img">
+                                </div>
+                                <!---------- text -------->
+                                <div class="review-text px-5">
+                                    <h2 class="text-capitalize mb-3 primary-color">Customer Name</h2>
+                                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Vel est delectus a velit similique. Quae illo, omnis repellendus ratione
+                                        accusamus adipisci amet quos doloremque earum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-------- end of carousel items ------->
+                <!-------carousel items  ------>
+                <div class="carousel-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 mx-auto d-flex justify-content-between review-item py-3">
+                                <!--image  -->
+                                <div class="align-self-center ml-3">
+                                    <img src="img/customer-3.jpg" alt="" class="rounded-circle review-img">
+                                </div>
+                                <!---------- text -------->
+                                <div class="review-text px-5">
+                                    <h2 class="text-capitalize mb-3 primary-color">Customer Name</h2>
+                                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Vel est delectus a velit similique. Quae illo, omnis repellendus ratione
+                                        accusamus adipisci amet quos doloremque earum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-------- end of carousel items ------->
+
+
+            </div>
+
+            <!------carousel controls ----->
+            <a href="#slider" class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+
+
+            <a href="#slider" class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+
+
+        </div>
+
+
+    </section>
+    <!-------End of Reviews----- -->
+
+    <!----------Team--------->
+    <section id="team" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-------team member ------->
+                <div class="col-9 col-sm-6 col-lg-4 mx-auto my-4">
+                    <div class="card">
+                        <img src="img/member-1.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h1 class="text-capitalize">Team Member</h1>
+                            </div>
+                            <h4 class="primary-color text-capitalize">Chef</h4>
+                        </div>
+                        <div class="card-footer team-icons d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-yelp fa-2x"></i></a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!---------- end of team member ------------>
+                <!-------team member ------->
+                <div class="col-9 col-sm-6 col-lg-4 mx-auto my-4">
+                    <div class="card">
+                        <img src="img/member-2.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h1 class="text-capitalize">Team Member</h1>
+                            </div>
+                            <h4 class="primary-color text-capitalize">Chef</h4>
+                        </div>
+                        <div class="card-footer team-icons d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-yelp fa-2x"></i></a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!---------- end of team member ------------>
+                <!-------team member ------->
+                <div class="col-9 col-sm-6 col-lg-4 mx-auto my-4">
+                    <div class="card">
+                        <img src="img/member-3.jpg" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <h1 class="text-capitalize">Team Member</h1>
+                            </div>
+                            <h4 class="primary-color text-capitalize">Chef</h4>
+                        </div>
+                        <div class="card-footer team-icons d-flex justify-content-between">
+                            <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+                            <a href="#"><i class="fab fa-yelp fa-2x"></i></a>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!---------- end of team member ------------>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!----------End of Team--------->
+
+    <!-- Contact section -->
+    <section id="contact">
+        <div class="container-fluid no-padding">
+            <div class="row">
+                <div class="col-md-6 my-3">
+                    <div class="embed-responsive embed-responsive-21by9 height-60">
+                        <iframe class="embed-responsive-item"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d761045.8005029307!2d-88.39131110840135!3d41.831847583951394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C%20IL!5e0!3m2!1sen!2sus!4v1685089615676!5m2!1sen!2sus"
+                            width="100" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6 my-3 align-self-center">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            <h1 class="text-uppercase">Contact List</h1>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <!-- input group -->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-text">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" id="text" class="form-control form-control-lg"
+                                        placeholder="Enter Your Name">
+                                </div>
+
+                                <!-- input group -->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-phone">
+                                            <i class="fas fa-phone"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" id="phone" class="form-control form-control-lg"
+                                        placeholder="Enter Your Phone Number">
+                                </div>
+
+                                <!-- input group -->
+                                <div class="input-group my-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="input-email">
+                                            <i class="fas fa-envelope"></i>
+                                        </span>
+                                    </div>
+                                    <input type="email" id="text" class="form-control form-control-lg"
+                                        placeholder="Enter Your Email">
+                                </div>
+
+                                <button type="submit" class="btn btn-block btn-lg text-uppercase contact-btn"><i
+                                        class="fa fa-hand-point-right mr-2"></i>Click Here</button>
+
+
+
+
+
+
+                            </form>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+
+    <!-- End of Contact section -->
+
+    <!-- social icons -->
+
+    <div class="container-fluid info p-3">
+
+        <div class="row">
+            <div class="col d-flex justify-content-between align-items-baseline flex-wrap">
+                <div class="info-icons p-2">
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-facebook fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-instagram fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-twitter fa-2x"></i></a>
+                    <a href="#" class="mr-2 primary-color"><i class="fab fa-yelp fa-2x"></i></a>
+
+                </div>
+                <h2 class="primary-color p-2 text-uppercase">&copy;Copyright 2018</h2>
+            </div>
+        </div>
+    </div>
+    <a href="#top-icons" id="back-to-top" class="p-1"><i class="fas fa-arrow-up primary-color fa-3x"></i></a>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="js/jquery.ripples-min.js"></script>
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
